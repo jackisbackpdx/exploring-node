@@ -1,11 +1,10 @@
-console.log(__filename);    
-console.log(__dirname);    
-    
-var url = 'http://mylogger.io/log';
-    
-function log(message) {
-        // Send an HTTP request
-    console.log(message);
-}
-    
-module.exports = log;
+const os = require('os');
+const path = require('path');
+
+let filename = path.parse(__filename);
+var totalMem = os.totalmem();
+const freeMem = os.freemem();
+
+console.log(totalMem);
+console.log(freeMem);
+console.log(filename);
